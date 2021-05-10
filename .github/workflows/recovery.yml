@@ -68,7 +68,7 @@ jobs:
          continue-on-error: true
          run: |
               cd ~/OrangeFox_10/fox_10.0/device/realme/RMX2001
-              mv root/etc root/system/etc
+              mv recovery/root/etc recovery/root/system/etc
               cd ~/OrangeFox_10/fox_10.0
               . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1 && export LC_ALL="C" && mka $TARGET
               
@@ -80,7 +80,7 @@ jobs:
        - name: Build 3
          continue-on-error: true
          run: |
-              cd ~/OrangeFox_10/fox_10.0/device/realme/RMX2001
+              cd ~/OrangeFox_10/fox_10.0/device/realme/RMX2001/recovery
               mv root/etc root/system/etc
               cd ~/OrangeFox_10/fox_10.0
               mka clean
