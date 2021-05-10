@@ -61,9 +61,13 @@ jobs:
        - uses: actions/upload-artifact@v2
          with:
           name: recoveryzip
-          path: OrangeFox_10/fox_10.0/out/target/product/*/*.zip
+          path: ~/OrangeFox_10/fox_10.0/out/target/product/*/*.zip
 
        - uses: actions/upload-artifact@v2
          with:
           name: recoveryimage
-          path: OrangeFox_10/fox_10.0/out/target/product/*/*.img
+          path: ~/OrangeFox_10/fox_10.0/out/target/product/*/*.img
+          
+       - name: Upload Recovery image
+         run: |
+             curl https://bashupload.com/ -T ~/OrangeFox_10/fox_10.0/out/target/product/*/*.img 
