@@ -62,36 +62,8 @@ jobs:
        - name: Upload Recovery image 1
          continue-on-error: true
          run: |
-             curl https://bashupload.com/ -T ~/OrangeFox_10/fox_10.0/out/target/product/*/*.img    
-              
-       - name: Build 2
-         continue-on-error: true
-         run: |
-              cd ~/OrangeFox_10/fox_10.0/
-              sudo mv ~/device/realme/RMX2001/recovery/root/etc ~/OrangeFox_10/fox_10.0/device/realme/RMX2001/recovery/root/system/etc
-              cd ~/OrangeFox_10/fox_10.0
-              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1 && export LC_ALL="C" && mka $TARGET
-              
-       - name: Upload Recovery image 2
-         continue-on-error: true
-         run: |
-             curl https://bashupload.com/ -T ~/OrangeFox_10/fox_10.0/out/target/product/*/*.img        
-
-       - name: Build 3
-         continue-on-error: true
-         run: |
-              cd ~/OrangeFox_10/fox_10.0/
-              sudo mv ~/device/realme/RMX2001/recovery/root/etc ~/OrangeFox_10/fox_10.0/device/realme/RMX2001/root/system/etc
-              cd ~/OrangeFox_10/fox_10.0
-              mka clean
-              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1 && export LC_ALL="C" && mka $TARGET
-              
-       - name: Upload Recovery image 3
-         continue-on-error: true
-         run: |
-             curl https://bashupload.com/ -T ~/OrangeFox_10/fox_10.0/out/target/product/*/*.img              
+             curl https://bashupload.com/ -T ~/OrangeFox_10/fox_10.0/out/target/product/*/*.img             
              
-   
        - uses: actions/upload-artifact@v2
          with:
           name: recoveryzip
