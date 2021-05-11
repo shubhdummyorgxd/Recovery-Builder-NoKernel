@@ -68,7 +68,7 @@ jobs:
          continue-on-error: true
          run: |
               cd ~/OrangeFox_10/fox_10.0/
-              sudo mv ~recovery/root/etc ~/OrangeFox_10/fox_10.0/recovery/root/system/etc
+              sudo mv ~/device/realme/RMX2001/recovery/root/etc ~/OrangeFox_10/fox_10.0/device/realme/RMX2001/recovery/root/system/etc
               cd ~/OrangeFox_10/fox_10.0
               . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1 && export LC_ALL="C" && mka $TARGET
               
@@ -81,7 +81,7 @@ jobs:
          continue-on-error: true
          run: |
               cd ~/OrangeFox_10/fox_10.0/
-              sudo mv ~/recovery/root/etc ~/OrangeFox_10/fox_10.0/device/realme/RMX2001/root/system/etc
+              sudo mv ~/device/realme/RMX2001/recovery/root/etc ~/OrangeFox_10/fox_10.0/device/realme/RMX2001/root/system/etc
               cd ~/OrangeFox_10/fox_10.0
               mka clean
               . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1 && export LC_ALL="C" && mka $TARGET
