@@ -14,8 +14,8 @@ on:
     types: [started]
 
 env:
-  DEVICE: RMX2001
-  DT_LINK: https://github.com/noobyysauraj/pbrp_realme_RMX2001/tree/ofox-a10
+  DEVICE: RMX200
+  DT_LINK: https://github.com/noobyysauraj/pbrp_realme_RMX2001.git -b ofox-a10
   DT_PATH: device/realme/RMX2001
   TARGET: recoveryimage
   TZ: Asia/Kolkata
