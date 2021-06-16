@@ -14,9 +14,11 @@ on:
     types: [started]
 
 env:
-  DEVICE: RMX2001
-  DT_LINK: https://github.com/noobyysauraj/pbrp_realme_RMX2001.git -b ofox-a10
-  DT_PATH: device/realme/RMX2001
+  MANIFEST: git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
+  MANIFEST_BRANCH: twrp-6.0
+  DEVICE: Infinix-X5511-13M
+  DT_LINK: https://github.com/noobyysauraj/twrp_device_infinix-X5511-13M
+  DT_PATH: device/Infinix/Infinix-X5511-13M
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
@@ -45,34 +47,26 @@ jobs:
             
        - name: Sync recovery source and device tree
          run: |
-             mkdir ~/OrangeFox_10
-             cd ~/OrangeFox_10
-             git clone https://gitlab.com/OrangeFox/sync.git # or, "git clone git@gitlab.com:OrangeFox/sync.git"
-             cd ~/OrangeFox_10/sync
-             ./get_fox_10.sh ~/OrangeFox_10/fox_10.0
-             cd ~/OrangeFox_10/fox_10.0
+             mkdir work
+             cd work
+             repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
+             repo sync -j4
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
              
-       - name: Build 
-         continue-on-error: true
+       - name: Build
          run: |
-              cd ~/OrangeFox_10/fox_10.0
-              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1 && export LC_ALL="C" && mka $TARGET
-              
-       - name: Upload Recovery zip 
-         continue-on-error: true
-         run: |
-             curl https://bashupload.com/ -T ~/OrangeFox_10/fox_10.0/out/target/product/*/*.zip             
+              cd work
+              . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
              
        - uses: actions/upload-artifact@v2
          with:
           name: recoveryzip
-          path: ~/OrangeFox_10/fox_10.0/out/target/product/*/*.zip
+          path: work/out/target/product/*/*.zip
 
        - uses: actions/upload-artifact@v2
          with:
           name: recoveryimage
-          path: ~/OrangeFox_10/fox_10.0/out/target/product/*/*.img
+          path: work/out/target/product/*/*.img
 
              
              
