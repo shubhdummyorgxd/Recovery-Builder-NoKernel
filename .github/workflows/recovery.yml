@@ -18,7 +18,7 @@ env:
   MANIFEST_BRANCH: twrp-6.0
   DEVICE: Infinix-X5511-13M
   DT_LINK: https://github.com/noobyysauraj/twrp_device_infinix-X5511-13M
-  DT_PATH: device/Infinix/Infinix-X5511-13M
+  DT_PATH: device/infinix/Infinix-X5511-13M
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
