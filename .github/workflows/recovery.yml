@@ -17,7 +17,7 @@ env:
   MANIFEST: git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
   MANIFEST_BRANCH: twrp-6.0
   DEVICE: ix5511B
-  DT_LINK: https://github.com/noobyysauraj/twrp_device_infinix-X5511-13M
+  DT_LINK: https://github.com/sarthakroy2002/twrp_device_infinix-X5511-13M
   DT_PATH: device/infinix/ix5511B
   TARGET: recoveryimage
   TZ: Asia/Kolkata
