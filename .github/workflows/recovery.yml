@@ -16,9 +16,9 @@ on:
 env:
   MANIFEST: git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
   MANIFEST_BRANCH: twrp-11
-  DEVICE: RMX2020
-  DT_LINK: https://github.com/sarthakroy2002/android_recovery_realme_RMX2020
-  DT_PATH: device/realme/RMX2020
+  DEVICE: RMX2050
+  DT_LINK: https://github.com/sarthakroy2002/android_device_realme_RMX2050
+  DT_PATH: device/realme/RMX2050
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
