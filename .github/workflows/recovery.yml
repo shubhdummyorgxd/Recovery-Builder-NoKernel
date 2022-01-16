@@ -1,6 +1,6 @@
 name: Building recovery
 
-on:
+on: workflow_dispatch
 #  release:
 #    types: [published]
 #  push:
