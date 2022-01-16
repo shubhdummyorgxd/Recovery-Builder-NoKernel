@@ -18,7 +18,7 @@ env:
   MANIFEST_BRANCH: v3_9.0
   DEVICE: RMX3171
   DT_LINK: https://github.com/shubhdummyorgxd/android_recovery_realme_RMX3171 -b main
-  DT_PATH: device/realme/RMX2020
+  DT_PATH: device/realme/rmx3171
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
