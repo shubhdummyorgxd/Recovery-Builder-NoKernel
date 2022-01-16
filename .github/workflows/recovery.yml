@@ -14,10 +14,10 @@ on:
     types: [started]
 
 env:
-  MANIFEST: git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
-  MANIFEST_BRANCH: twrp-11
-  DEVICE: RMX2020
-  DT_LINK: https://github.com/sarthakroy2002/android_recovery_realme_RMX2020 -b android-10.0
+  MANIFEST: git://github.com/SHRP/manifest.git
+  MANIFEST_BRANCH: v3_9.0
+  DEVICE: RMX3171
+  DT_LINK: https://github.com/shubhdummyorgxd/android_recovery_realme_RMX3171 -b main
   DT_PATH: device/realme/RMX2020
   TARGET: recoveryimage
   TZ: Asia/Kolkata
